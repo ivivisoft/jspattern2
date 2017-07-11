@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <title>observer pattern</title>
+    <style>
+        #results {
+            text-align: center;
+            font-size: 100px;
+        }
+
+        strong {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<button onclick="javascript:addNewPlayer();return false;">add new player</button>
+<div id="results"></div>
+<script src="observer/games.js"></script>
+<script>
+    window.onkeypress = game.handleKeypress;
+
+    function addNewPlayer() {
+        var playername, key;
+        playername = prompt('Add player (name)');
+        if (!playername) {
+            return;
+        }
+
+        key = prompt('Key for ' + playername + '?');
+        if (!key) {
+            return;
+        }
+        new Player(playername, key);
+    }
+    //    var playername, key;
+    //    while (1) {
+    //        playername = prompt('Add player (name)');
+    //        if (!playername) {
+    //            break;
+    //        }
+    //        while (1) {
+    //            key = prompt('Key for ' + playername + '?');
+    //            if (key) {
+    //                break;
+    //            }
+    //        }
+    //        new Player(playername, key);
+    //    }
+</script>
+</body>
+</html>

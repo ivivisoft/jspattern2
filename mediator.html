@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <title>Mediator pattern</title>
+    <style>
+        #results {
+            text-align: center;
+            font-size: 100px;
+        }
+
+        strong {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<p>Player one press "1", player two press "0". Go! (you have half a minute...)</p>
+<div id="results"></div>
+<script src="mediatorpattern.js"></script>
+<script>
+    mediator.setup();
+    window.onkeypress = mediator.keypress;
+
+
+    setTimeout(function () {
+        window.onkeypress = null;
+        alert('Game over!');
+    }, 30000);
+</script>
+</body>
+</html>
